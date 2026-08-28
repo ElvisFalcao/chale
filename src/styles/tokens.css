@@ -1,0 +1,54 @@
+/* Chale design tokens - direction 1c "Quicama"
+   Verde tropical nocturno. Extracted from Chale Explorations.dc.html.
+   Dark is the primary theme; there is no light variant yet by design. */
+
+:root {
+  /* --- surfaces, darkest to lightest --- */
+  --chale-void:      #081411; /* page ground, track wells, on-accent text */
+  --chale-sheet:     #0B1A16; /* bottom sheet */
+  --chale-surface:   #0F211C; /* cards */
+  --chale-surface-2: #16302A; /* controls, badges, steppers */
+  --chale-line:      #24463C; /* borders, grab handle */
+
+  /* --- accent --- */
+  --chale-accent:    #7BD8A0; /* primary: CTA, totals, active state */
+  --chale-accent-2:  #4FBB7F; /* gradient foot, currency suffix */
+  --chale-gold:      #F0C46A; /* payment / status marker only - use sparingly */
+
+  /* --- text, brightest to dimmest --- */
+  --chale-text:      #E9F3EC;
+  --chale-text-2:    #C3D8CB;
+  --chale-text-3:    #9CBCAB;
+  --chale-text-4:    #6E8D7E;
+
+  /* --- washes --- */
+  --chale-hairline:  rgba(233, 243, 236, 0.08);
+  --chale-wash:      rgba(233, 243, 236, 0.05);
+  --chale-glow:      0 10px 30px rgba(123, 216, 160, 0.28);
+  --chale-scrim:     rgba(8, 20, 17, 0.85);
+
+  /* --- motion --- */
+  --chale-ease:      cubic-bezier(0.22, 1, 0.36, 1);
+  --chale-fast:      80ms;
+  --chale-base:      220ms;
+  --chale-slow:      420ms;
+
+  color-scheme: dark;
+}
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--chale-void);
+  color: var(--chale-text);
+  font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
