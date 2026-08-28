@@ -100,7 +100,7 @@ export default function BookingSheet({
               key={m}
               onClick={() => setMode(m)}
               aria-pressed={mode === m}
-              className={`flex-1 rounded-[14px] py-3 text-[13.5px] font-semibold capitalize transition-colors duration-[--chale-fast] ${
+              className={`flex-1 rounded-[14px] py-3 text-[13.5px] font-semibold capitalize transition-colors duration-[var(--chale-fast)] ${
                 mode === m ? 'bg-accent text-void' : 'bg-transparent text-ink-3'
               }`}
             >
@@ -146,15 +146,15 @@ export default function BookingSheet({
               <div
                 key={i}
                 aria-hidden
-                className="absolute inset-y-0 bg-[--chale-wash]"
+                className="absolute inset-y-0 bg-[var(--chale-wash)]"
                 style={{ left: `${pct(b.start)}%`, width: `${((b.end - b.start) / DAY_SPAN) * 100}%` }}
               />
             ))}
 
-            <div className="absolute inset-x-0 bottom-2.5 h-px bg-[--chale-hairline]" />
+            <div className="absolute inset-x-0 bottom-2.5 h-px bg-[var(--chale-hairline)]" />
 
             <div
-              className={`absolute inset-y-2.5 flex items-center justify-between rounded-control px-2.5 shadow-glow transition-[left,width] duration-[--chale-fast] ease-linear ${
+              className={`absolute inset-y-2.5 flex items-center justify-between rounded-control px-2.5 shadow-glow transition-[left,width] duration-[var(--chale-fast)] ease-linear ${
                 conflict
                   ? 'bg-gold'
                   : 'bg-gradient-to-b from-accent to-accent-2'
@@ -200,7 +200,7 @@ export default function BookingSheet({
         <div className="flex flex-col gap-2.5 rounded-card bg-surface p-4">
           <Row label={q.lineLabel} value={`${fmt(q.subtotal)} Kz`} />
           <Row label="Taxa de limpeza" value={`${fmt(q.cleaningFee)} Kz`} />
-          <div className="h-px bg-[--chale-hairline]" />
+          <div className="h-px bg-[var(--chale-hairline)]" />
           <div className="flex items-baseline justify-between">
             <span className="text-[13px] text-ink-3">Total a pagar</span>
             <span className="font-mono text-[30px] tracking-[-0.04em] text-accent">

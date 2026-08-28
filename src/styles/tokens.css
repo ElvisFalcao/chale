@@ -3,23 +3,26 @@
    Dark is the primary theme; there is no light variant yet by design. */
 
 :root {
+  /* Colours are stored as raw RGB channels so Tailwind opacity modifiers
+     (bg-void/60) work. Use rgb(var(--token)) when writing plain CSS. */
+
   /* --- surfaces, darkest to lightest --- */
-  --chale-void:      #081411; /* page ground, track wells, on-accent text */
-  --chale-sheet:     #0B1A16; /* bottom sheet */
-  --chale-surface:   #0F211C; /* cards */
-  --chale-surface-2: #16302A; /* controls, badges, steppers */
-  --chale-line:      #24463C; /* borders, grab handle */
+  --chale-void:      8 20 17; /* page ground, track wells, on-accent text */
+  --chale-sheet:     11 26 22; /* bottom sheet */
+  --chale-surface:   15 33 28; /* cards */
+  --chale-surface-2: 22 48 42; /* controls, badges, steppers */
+  --chale-line:      36 70 60; /* borders, grab handle */
 
   /* --- accent --- */
-  --chale-accent:    #7BD8A0; /* primary: CTA, totals, active state */
-  --chale-accent-2:  #4FBB7F; /* gradient foot, currency suffix */
-  --chale-gold:      #F0C46A; /* payment / status marker only - use sparingly */
+  --chale-accent:    123 216 160; /* primary: CTA, totals, active state */
+  --chale-accent-2:  79 187 127; /* gradient foot, currency suffix */
+  --chale-gold:      240 196 106; /* payment / status marker only - use sparingly */
 
   /* --- text, brightest to dimmest --- */
-  --chale-text:      #E9F3EC;
-  --chale-text-2:    #C3D8CB;
-  --chale-text-3:    #9CBCAB;
-  --chale-text-4:    #6E8D7E;
+  --chale-text:      233 243 236;
+  --chale-text-2:    195 216 203;
+  --chale-text-3:    156 188 171;
+  --chale-text-4:    110 141 126;
 
   /* --- washes --- */
   --chale-hairline:  rgba(233, 243, 236, 0.08);
@@ -40,8 +43,8 @@ html, body, #root { height: 100%; }
 
 body {
   margin: 0;
-  background: var(--chale-void);
-  color: var(--chale-text);
+  background: rgb(var(--chale-void));
+  color: rgb(var(--chale-text));
   font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
